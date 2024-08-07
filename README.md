@@ -82,6 +82,19 @@ wasi-virt component.wasm -e CUSTOM=VAR --allow-env -o virt.wasm
 wasi-virt component.wasm -e CUSTOM=VAR --allow-env=SOME,ENV_VARS -o virt.wasm
 ```
 
+### Config
+
+```sh
+# Setting specific config properties (while disallowing all host config property access):
+wasi-virt component.wasm -c CUSTOM=VAR -o virt.wasm
+
+# Setting config properties with all host config properties allowed:
+wasi-virt component.wasm -c CUSTOM=VAR --allow-config -o virt.wasm
+
+# Setting config properties with restricted host config property access:
+wasi-virt component.wasm -c CUSTOM=VAR --allow-config=SOME,PROPERTY -o virt.wasm
+```
+
 ### Exit
 
 ```sh
